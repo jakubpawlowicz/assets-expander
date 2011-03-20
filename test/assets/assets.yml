@@ -1,0 +1,14 @@
+stylesheets:
+  desktop/public1: 'asset3,asset2,*,folder1/subfolder1/*'
+  desktop/public2:
+    folder1: 'asset5,subfolder1/asset6'
+  desktop/public3:
+    - 'asset3'
+    - 'folder1/asset5'
+    - 'folder1/subfolder1/asset6'
+  desktop/public4:
+    - folder1:
+      - '*'
+      - subfolder1/*'
+javascripts:
+  desktop/public1: ''

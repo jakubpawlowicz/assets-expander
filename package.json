@@ -1,0 +1,16 @@
+{
+  "name": "assets-expander",
+  "author": "Jakub Pawlowicz <jakub@goalsmashers.com> (http://twitter.com/GoalSmashers)",
+  "description": "A well-tested Assets expander - specify assets graph in YAML file and easily expand them into a linear list",
+  "keywords": ["css", "javascript", "assets", "yaml"],
+  "homepage": "http://github.com/GoalSmashers/assets-expander",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/GoalSmashers/assets-expander.git"
+  },
+  "version": "0.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "rightjs": "2.2.x"
+  }
+}
