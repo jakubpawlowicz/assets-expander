@@ -5,6 +5,7 @@ stylesheets:
   desktop/public3:
     - 'asset3'
     - 'folder1/asset5'
+    - 'folder1/asset*'
     - 'folder1/subfolder1/asset6'
   desktop/public4:
     - folder1:

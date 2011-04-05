@@ -158,13 +158,14 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   },
   'expanding group #3 from assets.yml': {
     topic: group('desktop/public3'),
-    'should give 3 assets': function(expanded) {
-      assert.length(expanded, 3);
+    'should give 4 assets': function(expanded) {
+      assert.length(expanded, 4);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset3'));
       assert.equal(expanded[1], fullPathTo('folder1/asset5'));
-      assert.equal(expanded[2], fullPathTo('folder1/subfolder1/asset6'));
+      assert.equal(expanded[2], fullPathTo('folder1/asset4'));
+      assert.equal(expanded[3], fullPathTo('folder1/subfolder1/asset6'));
     }
   },
   'expanding group #4 from assets.yml': {
