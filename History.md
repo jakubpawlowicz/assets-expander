@@ -1,3 +1,10 @@
+0.1.2 / 2011-04-05
+==================
+
+  * Fixed repeating entries when processing groups.
+  * Fixed processing wildcard attributes with extra characters, e.g. 'abstract-*'.
+  * Fixed parsing lists elements.
+
 0.1.1 / 2011-04-03
 ==================
 
