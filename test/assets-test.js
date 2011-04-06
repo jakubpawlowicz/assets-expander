@@ -15,11 +15,11 @@ function expand(list) {
 };
 
 function expanderFor(name) {
-  return new AssetsExpander(path.join(process.cwd(), 'test', 'assets', name), { root: rootPath, type: 'css' });
+  return new AssetsExpander(path.join(process.cwd(), 'test', 'assets', name), { root: rootPath });
 };
 
 function group(groupId) {
-  return expanderFor('assets.yml').processGroup('stylesheets', groupId);
+  return expanderFor('assets.yml').processGroup('stylesheets', groupId, { type: 'css' });
 };
 
 exports.listsSuite = vows.describe('expanding assets').addBatch({
