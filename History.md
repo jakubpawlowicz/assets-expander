@@ -1,3 +1,8 @@
+0.2.0 / 2011-04-07
+==================
+
+  * **type** property (denoting file extension, e.g. 'css') is now passed to processGroup method allowing reuse of single AssetsExpander instance for finding various types of files.
+
 0.1.2 / 2011-04-05
 ==================
 
