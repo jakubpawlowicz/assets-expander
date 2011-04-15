@@ -1,3 +1,8 @@
+0.2.1 / 2011-04-15
+==================
+
+  * Fixes expanding folder/prefix* wildcard paths.
+
 0.2.0 / 2011-04-07
 ==================
 
