@@ -95,8 +95,8 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   },
   'expanding multi level wildcard argument': {
     topic: expand('**/*'),
-    'should give 7 assets': function(expanded) {
-      assert.length(expanded, 7);
+    'should give 8 assets': function(expanded) {
+      assert.length(expanded, 8);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -105,29 +105,32 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
       assert.equal(expanded[3], fullPathTo('other-asset'));
       assert.equal(expanded[4], fullPathTo('folder1/asset4'));
       assert.equal(expanded[5], fullPathTo('folder1/asset5'));
-      assert.equal(expanded[6], fullPathTo('folder1/subfolder1/asset6'));
+      assert.equal(expanded[6], fullPathTo('folder1/other'));
+      assert.equal(expanded[7], fullPathTo('folder1/subfolder1/asset6'));
     }
   },
   'expanding multi level wildcard with prefix': {
     topic: expand('folder1/**/*'),
-    'should give 3 assets': function(expanded) {
-      assert.length(expanded, 3);
+    'should give 4 assets': function(expanded) {
+      assert.length(expanded, 4);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset4'));
       assert.equal(expanded[1], fullPathTo('folder1/asset5'));
-      assert.equal(expanded[2], fullPathTo('folder1/subfolder1/asset6'));
+      assert.equal(expanded[2], fullPathTo('folder1/other'));
+      assert.equal(expanded[3], fullPathTo('folder1/subfolder1/asset6'));
     }
   },
   'expanding sublevel list': {
     topic: expand('folder1/[asset5,subfolder1/*,*]'),
-    'should give 3 assets': function(expanded) {
-      assert.length(expanded, 3);
+    'should give 4 assets': function(expanded) {
+      assert.length(expanded, 4);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset5'));
       assert.equal(expanded[1], fullPathTo('folder1/subfolder1/asset6'));
       assert.equal(expanded[2], fullPathTo('folder1/asset4'));
+      assert.equal(expanded[3], fullPathTo('folder1/other'));
     }
   }
 });
@@ -170,13 +173,14 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   },
   'expanding group #4 from assets.yml': {
     topic: group('desktop/public4'),
-    'should give 3 assets': function(expanded) {
-      assert.length(expanded, 3);
+    'should give 4 assets': function(expanded) {
+      assert.length(expanded, 4);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset4'));
       assert.equal(expanded[1], fullPathTo('folder1/asset5'));
-      assert.equal(expanded[2], fullPathTo('folder1/subfolder1/asset6'));
+      assert.equal(expanded[2], fullPathTo('folder1/other'));
+      assert.equal(expanded[3], fullPathTo('folder1/subfolder1/asset6'));
     }
   }
 });

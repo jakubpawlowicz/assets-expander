@@ -10,6 +10,6 @@ stylesheets:
   desktop/public4:
     - folder1:
       - '*'
-      - subfolder1/*'
+      - 'subfolder1/*'
 javascripts:
   desktop/public1: ''
