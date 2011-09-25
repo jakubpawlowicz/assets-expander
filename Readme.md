@@ -1,6 +1,6 @@
 ## What is assets-expander? ##
 
-assets-expander is a node.js library for expanding lists of files defined in YAML file into a flat lists.
+assets-expander is a node.js library for expanding list(s) of files defined in YAML file into a flat list(s) of files.
 
 ## Usage ##
 
@@ -34,4 +34,6 @@ executing the code above will get you a list of full paths to these 4 files:
 
     ['.../stylesheets/reset.css', '.../stylesheets/shared.css', '.../stylesheets/base.css', '.../stylesheets/home.css']
     
-    
+## License ##
+
+Assets-expander is released under the MIT license.
