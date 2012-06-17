@@ -35,7 +35,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expand single file': {
     topic: expand('asset1'),
     'should get array with one element': function(expanded) {
-      assert.length(expanded, 1);
+      assert.equal(expanded.length, 1);
     },
     'should get full path to 1.css': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -44,7 +44,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding three files': {
     topic: expand('asset1,asset3,asset2'),
     'should give array of three files': function(expanded) {
-      assert.length(expanded, 3);
+      assert.equal(expanded.length, 3);
     },
     'should give three files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -61,7 +61,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding single level wildcard arguments': {
     topic: expand('*'),
     'should give three assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give files in natural order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -73,7 +73,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding single level custom wildcard arguments': {
     topic: expand('asset*'),
     'should give three assets': function(expanded) {
-      assert.length(expanded, 3);
+      assert.equal(expanded.length, 3);
     },
     'should give files in natural order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -84,7 +84,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding single level list with wildcard': {
     topic: expand('asset2,other-asset,*'),
     'should give 4 assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give assets in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset2'));
@@ -96,7 +96,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding multi level wildcard argument': {
     topic: expand('**/*'),
     'should give 8 assets': function(expanded) {
-      assert.length(expanded, 8);
+      assert.equal(expanded.length, 8);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset1'));
@@ -112,7 +112,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding multi level wildcard with prefix': {
     topic: expand('folder1/**/*'),
     'should give 4 assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset4'));
@@ -124,7 +124,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expanding sublevel list': {
     topic: expand('folder1/[asset5,subfolder1/*,*]'),
     'should give 4 assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give files in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset5'));
@@ -136,10 +136,24 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
 });
 
 exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
+  'expand unknown type': {
+    'should not fail': function(expanded) {
+      assert.throws(function() {
+        expanderFor('assets.yml').processGroup('unknown', 'type1', { type: 'css' });
+      }, AssetsExpander.UnknownTypeError);
+    }
+  },
+  'expand unknown group': {
+    'should not fail': function(expanded) {
+      assert.throws(function() {
+        expanderFor('assets.yml').processGroup('stylesheets', 'type1', { type: 'css' });
+      }, AssetsExpander.UnknownGroupError);
+    }
+  },
   'expanding group #1 from assets.yml': {
     topic: group('desktop/public1'),
     'should give 5 assets': function(expanded) {
-      assert.length(expanded, 5);
+      assert.equal(expanded.length, 5);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset3'));
@@ -152,7 +166,7 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   'expanding group #2 from assets.yml': {
     topic: group('desktop/public2'),
     'should give 2 assets': function(expanded) {
-      assert.length(expanded, 2);
+      assert.equal(expanded.length, 2);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset5'));
@@ -162,7 +176,7 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   'expanding group #3 from assets.yml': {
     topic: group('desktop/public3'),
     'should give 4 assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('asset3'));
@@ -174,7 +188,7 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   'expanding group #4 from assets.yml': {
     topic: group('desktop/public4'),
     'should give 4 assets': function(expanded) {
-      assert.length(expanded, 4);
+      assert.equal(expanded.length, 4);
     },
     'should give in proper order': function(expanded) {
       assert.equal(expanded[0], fullPathTo('folder1/asset4'));
