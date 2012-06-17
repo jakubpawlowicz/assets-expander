@@ -28,7 +28,11 @@ exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
     'should give YAML error': function(topic) {
       assert.throws(function() {
         expanderFor(topic);
-      }, AssetsExpander.YamlSyntaxError);
+      }, function(err) {
+        if ((err instanceof AssetsExpander.YamlSyntaxError) && err.name == 'YamlSyntaxError' && /dedented/.test(err.message)) {
+          return true;
+        }
+      });
     }
   }
 });
@@ -151,14 +155,22 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
     'should not fail': function(expanded) {
       assert.throws(function() {
         expanderFor('assets.yml').processGroup('unknown', 'type1', { type: 'css' });
-      }, AssetsExpander.UnknownTypeError);
+      }, function(err) {
+        if ((err instanceof AssetsExpander.UnknownTypeError) && err.name == 'UnknownTypeError' && /unknown/.test(err.message)) {
+          return true;
+        }
+      });
     }
   },
   'expand unknown group': {
     'should not fail': function(expanded) {
       assert.throws(function() {
         expanderFor('assets.yml').processGroup('stylesheets', 'type1', { type: 'css' });
-      }, AssetsExpander.UnknownGroupError);
+      }, function(err) {
+        if ((err instanceof AssetsExpander.UnknownGroupError) && err.name == 'UnknownGroupError' && /stylesheets/.test(err.message) && /type1/.test(err.message)) {
+          return true;
+        }
+      });
     }
   },
   'expanding group #1 from assets.yml': {
