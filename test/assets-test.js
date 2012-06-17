@@ -22,6 +22,17 @@ function group(groupId) {
   return expanderFor('assets.yml').processGroup('stylesheets', groupId, { type: 'css' });
 };
 
+exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
+  'no end line': {
+    topic: 'broken.yml',
+    'should give YAML error': function(topic) {
+      assert.throws(function() {
+        expanderFor(topic);
+      }, AssetsExpander.YamlSyntaxError);
+    }
+  }
+});
+
 exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expand empty': {
     topic: expand(''),
