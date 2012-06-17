@@ -1,3 +1,10 @@
+0.2.2 / 2012-06-17
+==================
+
+  * Fixed tests (no assert.length).
+  * Added exceptions in case of unknown group/type or YAML syntax.
+  * Fixed dev dependencies.
+
 0.2.1 / 2011-04-15
 ==================
 
