@@ -1,3 +1,8 @@
+0.2.3 / 2012-06-17
+==================
+
+  * Fixed error classes (missing name which affects instanceof).
+
 0.2.2 / 2012-06-17
 ==================
 
