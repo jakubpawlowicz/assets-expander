@@ -10,9 +10,6 @@
   },
   "version": "0.2.3",
   "main": "index.js",
-  "dependencies": {
-    "rightjs": "2.2.x"
-  },
   "devDependencies": {
     "vows": "*"
   }
