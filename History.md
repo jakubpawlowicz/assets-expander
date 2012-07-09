@@ -1,3 +1,8 @@
+0.3.0 / 2012-07-09
+==================
+
+  * Removed 'rightjs' dependency as it's an overkill to use it.
+
 0.2.3 / 2012-06-17
 ==================
 
