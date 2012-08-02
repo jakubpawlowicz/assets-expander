@@ -1,8 +1,9 @@
 TEST_DIR = test
+VOWS = ./node_modules/vows/bin/vows
 
 all: test
 
 test:
-	@@vows ${TEST_DIR}/*-test.js
+	@@${VOWS} ${TEST_DIR}/*-test.js
 
 .PHONY: all test
