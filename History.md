@@ -1,3 +1,9 @@
+0.3.1 / 2012-08-02
+==================
+
+  * Added direct path to vows dependency.
+  * Added fs.existsSync fallback to get rid of 0.8 warnings.
+
 0.3.0 / 2012-07-09
 ==================
 
