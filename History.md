@@ -1,3 +1,9 @@
+0.4.0 / 2012-08-06
+==================
+
+  * Added full windows support with tests.
+  * Patched yaml.js to support CRLF line endings.
+
 0.3.1 / 2012-08-02
 ==================
 
