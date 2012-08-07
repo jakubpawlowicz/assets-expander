@@ -36,7 +36,7 @@ function context(str) {
  */
 
 var tokens = [
-  ['comment', /^#[^\n]*/],
+  ['comment', isWindows ? /^#[^\r\n]*/ : /^#[^\n]*/],
   ['indent', isWindows ? /^\r\n( *)/ : /^\n( *)/],
   ['space', /^ +/],
   ['empty', isWindows ? /^\r\n$/ : /^\n$/],
