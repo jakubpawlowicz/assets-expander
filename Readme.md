@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/GoalSmashers/assets-expander.png)](http://travis-ci.org/GoalSmashers/assets-expander)
 ## What is assets-expander? ##
 
 assets-expander is a node.js library for expanding list(s) of files defined in YAML file into a flat list(s) of files.
