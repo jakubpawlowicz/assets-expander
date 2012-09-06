@@ -1,4 +1,4 @@
-# Comment (just to test that parsing them works)
+# Comment (just to test that parsing comments works)
 stylesheets:
   desktop/public1: 'asset3,asset2,*,folder1/subfolder1/*'
   desktop/public2:

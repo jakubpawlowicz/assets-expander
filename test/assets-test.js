@@ -6,20 +6,27 @@ var vows = require('vows'),
 
 var rootPath = process.cwd() + '/test/assets/';
 
-function fullPathTo(assetName) {
-  return path.join(rootPath, 'stylesheets', assetName + '.css');
+function fullPathTo(assetName, stylesPath) {
+  stylesPath = stylesPath || 'stylesheets';
+  return path.join(rootPath, stylesPath, assetName + '.css');
 };
 
 function expand(list) {
-  return new AssetsExpander().processList(list, { root: path.join(rootPath, 'stylesheets'), type: 'css' });
+  var options = {
+    root: path.join(rootPath, 'stylesheets'),
+    type: 'css'
+  }
+  return new AssetsExpander().processList(list, options);
 };
 
 function expanderFor(name) {
-  return new AssetsExpander(path.join(process.cwd(), 'test', 'assets', name), { root: rootPath });
+  var yamlFilePath = path.join(process.cwd(), 'test', 'assets', name);
+  return new AssetsExpander(yamlFilePath, { root: rootPath });
 };
 
 function group(groupId) {
-  return expanderFor('assets.yml').processGroup('stylesheets', groupId, { type: 'css' });
+  return expanderFor('assets.yml')
+    .processGroup('stylesheets', groupId, { type: 'css' });
 };
 
 exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
@@ -37,6 +44,9 @@ exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
   }
 });
 
+// Tests expanding various assets definitions,
+// e.g. '*', 'one,two', 'path/**/*', 'path/[one,two]'.
+// It is based on files in ./assets/stylesheets directory.
 exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expand empty': {
     topic: expand(''),
@@ -150,6 +160,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   }
 });
 
+// Tests expanding real definitions from *.yml files
 exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   'expand unknown type': {
     'should not fail': function(expanded) {
@@ -218,6 +229,19 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
       assert.equal(expanded[1], fullPathTo('folder1/asset5'));
       assert.equal(expanded[2], fullPathTo('folder1/other'));
       assert.equal(expanded[3], fullPathTo('folder1/subfolder1/asset6'));
+    }
+  },
+  'expanding all from custom.yml (with custom path)': {
+    topic: function() {
+      return expanderFor('custom.yml')
+        .processGroup('stylesheets', 'all', { type: 'css', path: './css' });
+    },
+    'should give one asset': function(expanded) {
+      assert.equal(expanded.length, 2);
+    },
+    'should give one.css only': function(expanded) {
+      assert.equal(expanded[0], fullPathTo('one', 'css'));
+      assert.equal(expanded[1], fullPathTo('two', 'css'));
     }
   }
 });
