@@ -1,3 +1,8 @@
+0.5.0 / 2012-09-06
+==================
+
+  * Added ability to override stylesheets/javascripts directories via 'path' option to #processGroup method.
+
 0.4.1 / 2012-08-07
 ==================
 
