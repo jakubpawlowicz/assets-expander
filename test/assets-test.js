@@ -30,13 +30,13 @@ function group(groupId) {
 };
 
 exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
-  'no end line': {
+  'broken data': {
     topic: 'broken.yml',
     'should give YAML error': function(topic) {
       assert.throws(function() {
         expanderFor(topic);
       }, function(err) {
-        if ((err instanceof AssetsExpander.YamlSyntaxError) && err.name == 'YamlSyntaxError' && /dedented/.test(err.message)) {
+        if ((err instanceof AssetsExpander.YamlSyntaxError) && err.name == 'YamlSyntaxError' && /bad\ indentation/.test(err.message)) {
           return true;
         }
       });

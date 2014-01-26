@@ -2,6 +2,7 @@
 ==================
 
 * Drops node 0.6 support in favour to node 0.10.
+* Drops our private build of yaml.js in favour to js-yaml.
 
 0.5.0 / 2012-09-06
 ==================
