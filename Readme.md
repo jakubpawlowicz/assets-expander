@@ -1,7 +1,8 @@
 [![build status](https://secure.travis-ci.org/GoalSmashers/assets-expander.png)](http://travis-ci.org/GoalSmashers/assets-expander)
 ## What is assets-expander? ##
 
-assets-expander is a node.js library for expanding list(s) of files defined in YAML file into a flat list(s) of files.
+Assets-expander is a node.js library that turns a glob-like declarations from YAML file into a list of files.
+Just see below for examples.
 
 ## Usage ##
 
@@ -13,27 +14,42 @@ assets-expander is a node.js library for expanding list(s) of files defined in Y
 
     var AssetsExpander = require('assets-expander');
     var expander = new AssetsExpander('assets.yml', { root: 'path/to/public/dir' });
-    expander.processGroup('stylesheets', 'public') // gets a flat list of assets in public group
+    expander.processGroup('javascripts', 'public') // gets a flat list of assets in public group
 
 ### How to define assets.yml file? ###
 
-It depends what files you want to have in *public* group, but in general the file should look something like this.
+Just go with something like:
 
+    javascripts:
+      public:
+        vendor: 'undescore,modernizr'
+        public: '**/*'
     stylesheets:
       public:
         - 'reset,shared,base,home'
 
 Then if you have the following directory structure:
-
+    
+    javascripts
+      - vendor
+        - underscore.js
+        - modernizr.js
+      - public
+        - main.js
+        - fallback.js
     stylesheets
       - reset.css
       - shared.css
       - base.css
       - home.css
 
-executing the code above will get you a list of full paths to these 4 files:
+then running the following code will give you the files you need:
 
-    ['.../stylesheets/reset.css', '.../stylesheets/shared.css', '.../stylesheets/base.css', '.../stylesheets/home.css']
+    > expander.processGroup('stylesheets', 'public')
+    > ['stylesheets/reset.css', 'stylesheets/shared.css', 'stylesheets/base.css', 'stylesheets/home.css']
+
+    > expander.processGroup('javascripts', 'public')
+    > ['javascripts/vendor/underscore.js', 'javascripts/vendor/modernizr.js', 'javascripts/public/main.js', 'javascripts/public/fallback.js']
 
 ## License ##
 
