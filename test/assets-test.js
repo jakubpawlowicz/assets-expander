@@ -1,33 +1,32 @@
-var vows = require('vows'),
-  assert = require('assert'),
-  AssetsExpander = require('../index'),
-  fs = require('fs'),
-  path = require('path');
+var vows = require('vows');
+var assert = require('assert');
+var AssetsExpander = require('../index');
+var path = require('path');
 
 var rootPath = process.cwd() + '/test/assets/';
 
 function fullPathTo(assetName, stylesPath) {
   stylesPath = stylesPath || 'stylesheets';
   return path.join(rootPath, stylesPath, assetName + '.css');
-};
+}
 
 function expand(list) {
   var options = {
     root: path.join(rootPath, 'stylesheets'),
     type: 'css'
-  }
+  };
   return new AssetsExpander().processList(list, options);
-};
+}
 
 function expanderFor(name) {
   var yamlFilePath = path.join(process.cwd(), 'test', 'assets', name);
   return new AssetsExpander(yamlFilePath, { root: rootPath });
-};
+}
 
 function group(groupId) {
   return expanderFor('assets.yml')
     .processGroup('stylesheets', groupId, { type: 'css' });
-};
+}
 
 exports.yamlSuite = vows.describe('incorrect yaml').addBatch({
   'broken data': {
@@ -51,7 +50,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
   'expand empty': {
     topic: expand(''),
     'should get array': function(expanded) {
-      assert.isArray(expanded)
+      assert.isArray(expanded);
     },
     'should get empty list': function(expanded) {
       assert.isEmpty(expanded);
@@ -163,7 +162,7 @@ exports.listsSuite = vows.describe('expanding assets').addBatch({
 // Tests expanding real definitions from *.yml files
 exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
   'expand unknown type': {
-    'should not fail': function(expanded) {
+    'should not fail': function() {
       assert.throws(function() {
         expanderFor('assets.yml').processGroup('unknown', 'type1', { type: 'css' });
       }, function(err) {
@@ -174,7 +173,7 @@ exports.groupsSuite = vows.describe('expanding assets groups').addBatch({
     }
   },
   'expand unknown group': {
-    'should not fail': function(expanded) {
+    'should not fail': function() {
       assert.throws(function() {
         expanderFor('assets.yml').processGroup('stylesheets', 'type1', { type: 'css' });
       }, function(err) {
@@ -272,16 +271,16 @@ exports.listAllSuite = vows.describe('getting all groups and assets').addBatch({
       assert.isArray(groups);
     },
     'should get four results': function(groups) {
-      assert.equal(groups[0], 'desktop/public1')
-      assert.equal(groups[1], 'desktop/public2')
-      assert.equal(groups[2], 'desktop/public3')
-      assert.equal(groups[3], 'desktop/public4')
+      assert.equal(groups[0], 'desktop/public1');
+      assert.equal(groups[1], 'desktop/public2');
+      assert.equal(groups[2], 'desktop/public3');
+      assert.equal(groups[3], 'desktop/public4');
     }
   },
   'list of javascript groups from assets.yml file': {
     topic: expanderFor('assets.yml').groupsFor('stylesheets'),
     'should get four results': function(groups) {
-      assert.equal(groups[0], 'desktop/public1')
+      assert.equal(groups[0], 'desktop/public1');
     }
   },
   'list of unknown groups from assets.yml file': {

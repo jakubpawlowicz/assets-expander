@@ -1,1 +1,1 @@
-module.exports = require("./lib/assets");
+module.exports = require('./lib/assets');
