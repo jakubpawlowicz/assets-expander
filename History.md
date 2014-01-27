@@ -5,6 +5,7 @@
 * Drops our private build of yaml.js in favour to js-yaml.
 * Removes Makefile and test.bat and adds cross-platform test runner via `npm test`.
 * Fixes code formatting following JSHint guidelines. Adds `npm run check`.
+* Adds code formatting checks on prepublish step.
 
 0.5.0 / 2012-09-06
 ==================

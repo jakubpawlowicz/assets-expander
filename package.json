@@ -12,6 +12,7 @@
   "main": "index.js",
   "scripts": {
     "check": "jshint .",
+    "prepublish": "jshint .",
     "test": "vows"
   },
   "devDependencies": {
