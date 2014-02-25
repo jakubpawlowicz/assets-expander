@@ -1,7 +1,7 @@
 {
   "name": "assets-expander",
   "author": "Jakub Pawlowicz <jakub@goalsmashers.com> (http://twitter.com/GoalSmashers)",
-  "description": "A well-tested Assets expander - specify assets graph in YAML file and easily expand them into a linear list",
+  "description": "A well-tested tool for expanding any files structure defined in YAML file into a flat list of files",
   "keywords": ["css", "javascript", "assets", "yaml"],
   "homepage": "http://github.com/GoalSmashers/assets-expander",
   "repository": {
