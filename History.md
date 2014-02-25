@@ -1,4 +1,4 @@
-1.0.0 / 2014-xx-xx (UNRELEASED)
+[1.0.0 / 2014-02-25](https://github.com/GoalSmashers/assets-expander/compare/v0.5.0...v1.0.0)
 ==================
 
 * Drops node 0.6 support in favour to node 0.10.

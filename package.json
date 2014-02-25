@@ -1,6 +1,6 @@
 {
   "name": "assets-expander",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "author": "Jakub Pawlowicz <jakub@goalsmashers.com> (http://twitter.com/GoalSmashers)",
   "description": "A well-tested tool for expanding any files structure defined in YAML file into a flat list of files",
   "license": "MIT",
