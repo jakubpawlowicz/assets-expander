@@ -1,4 +1,7 @@
-[![build status](https://secure.travis-ci.org/GoalSmashers/assets-expander.png)](http://travis-ci.org/GoalSmashers/assets-expander)
+[![NPM version](https://badge.fury.io/js/assets-expander.png)](https://badge.fury.io/js/assets-expander)
+[![Build Status](https://secure.travis-ci.org/GoalSmashers/assets-expander.png)](https://travis-ci.org/GoalSmashers/assets-expander)
+[![Dependency Status](https://david-dm.org/GoalSmashers/assets-expander.png?theme=shields.io)](https://david-dm.org/GoalSmashers/assets-expander)
+[![devDependency Status](https://david-dm.org/GoalSmashers/assets-expander/dev-status.png?theme=shields.io)](https://david-dm.org/GoalSmashers/assets-expander#info=devDependencies)
 ## What is assets-expander? ##
 
 Assets-expander is a node.js library that turns a glob-like declarations from YAML file into a list of files.
@@ -29,7 +32,7 @@ Just go with something like:
         - 'reset,shared,base,home'
 
 Then if you have the following directory structure:
-    
+
     javascripts
       - vendor
         - underscore.js
