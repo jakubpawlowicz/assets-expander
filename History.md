@@ -1,3 +1,8 @@
+[1.0.2 / 2014-02-27](https://github.com/GoalSmashers/assets-expander/compare/v1.0.1...v1.0.2)
+==================
+
+* Version bump due to a broken publishing of 1.0.1 at npm registry.
+
 [1.0.1 / 2014-02-27](https://github.com/GoalSmashers/assets-expander/compare/v1.0.0...v1.0.1)
 ==================
 
