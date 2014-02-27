@@ -30,8 +30,10 @@
     "prepublish": "jshint .",
     "test": "vows"
   },
+  "dependencies": {
+    "js-yaml": "3.0.x"
+  },
   "devDependencies": {
-    "js-yaml": "3.0.x",
     "jshint": "2.4.x",
     "vows": "0.7.x"
   },

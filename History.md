@@ -1,3 +1,8 @@
+[1.0.1 / 2014-xx-xx (UNRELEASED)](https://github.com/GoalSmashers/assets-expander/compare/v1.0.0...v1.0.1)
+==================
+
+* Fixes incorrectly declared js-yaml dependency
+
 [1.0.0 / 2014-02-25](https://github.com/GoalSmashers/assets-expander/compare/v0.5.0...v1.0.0)
 ==================
 
