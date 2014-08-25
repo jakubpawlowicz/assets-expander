@@ -1,14 +1,14 @@
-[1.0.2 / 2014-02-27](https://github.com/GoalSmashers/assets-expander/compare/v1.0.1...v1.0.2)
+[1.0.2 / 2014-02-27](https://github.com/jakubpawlowicz/assets-expander/compare/v1.0.1...v1.0.2)
 ==================
 
 * Version bump due to a broken publishing of 1.0.1 at npm registry.
 
-[1.0.1 / 2014-02-27](https://github.com/GoalSmashers/assets-expander/compare/v1.0.0...v1.0.1)
+[1.0.1 / 2014-02-27](https://github.com/jakubpawlowicz/assets-expander/compare/v1.0.0...v1.0.1)
 ==================
 
 * Fixes incorrectly declared js-yaml dependency
 
-[1.0.0 / 2014-02-25](https://github.com/GoalSmashers/assets-expander/compare/v0.5.0...v1.0.0)
+[1.0.0 / 2014-02-25](https://github.com/jakubpawlowicz/assets-expander/compare/v0.5.0...v1.0.0)
 ==================
 
 * Drops node 0.6 support in favour to node 0.10.

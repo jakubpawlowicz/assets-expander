@@ -1,7 +1,7 @@
 [![NPM version](https://badge.fury.io/js/assets-expander.png)](https://badge.fury.io/js/assets-expander)
-[![Build Status](https://secure.travis-ci.org/GoalSmashers/assets-expander.png)](https://travis-ci.org/GoalSmashers/assets-expander)
-[![Dependency Status](https://david-dm.org/GoalSmashers/assets-expander.png?theme=shields.io)](https://david-dm.org/GoalSmashers/assets-expander)
-[![devDependency Status](https://david-dm.org/GoalSmashers/assets-expander/dev-status.png?theme=shields.io)](https://david-dm.org/GoalSmashers/assets-expander#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/jakubpawlowicz/assets-expander.png)](https://travis-ci.org/jakubpawlowicz/assets-expander)
+[![Dependency Status](https://david-dm.org/jakubpawlowicz/assets-expander.png?theme=shields.io)](https://david-dm.org/jakubpawlowicz/assets-expander)
+[![devDependency Status](https://david-dm.org/jakubpawlowicz/assets-expander/dev-status.png?theme=shields.io)](https://david-dm.org/jakubpawlowicz/assets-expander#info=devDependencies)
 
 ## What is assets-expander?
 

@@ -1,7 +1,7 @@
 {
   "name": "assets-expander",
   "version": "1.0.2",
-  "author": "Jakub Pawlowicz <jakub@goalsmashers.com> (http://twitter.com/GoalSmashers)",
+  "author": "Jakub Pawlowicz <contact@jakubpawlowicz.com> (http://twitter.com/jakubpawlowicz)",
   "description": "A well-tested tool for expanding any files structure defined in YAML file into a flat list of files",
   "license": "MIT",
   "keywords": [
@@ -10,13 +10,13 @@
     "assets",
     "yaml"
   ],
-  "homepage": "http://github.com/GoalSmashers/assets-expander",
+  "homepage": "http://github.com/jakubpawlowicz/assets-expander",
   "repository": {
     "type" : "git",
-    "url" : "http://github.com/GoalSmashers/assets-expander.git"
+    "url" : "http://github.com/jakubpawlowicz/assets-expander.git"
   },
   "bugs": {
-    "url": "https://github.com/GoalSmashers/assets-expander/issues"
+    "url": "https://github.com/jakubpawlowicz/assets-expander/issues"
   },
   "main": "index.js",
   "files": [
