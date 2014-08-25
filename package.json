@@ -31,7 +31,7 @@
     "test": "vows"
   },
   "dependencies": {
-    "js-yaml": "3.0.x"
+    "js-yaml": "3.2.x"
   },
   "devDependencies": {
     "jshint": "2.5.x",
