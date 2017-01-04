@@ -31,11 +31,11 @@
     "test": "vows"
   },
   "dependencies": {
-    "js-yaml": "3.2.x"
+    "js-yaml": "~3.7.0"
   },
   "devDependencies": {
-    "jshint": "2.5.x",
-    "vows": "0.7.x"
+    "jshint": "~2.9.4",
+    "vows": "~0.8.1"
   },
   "engines": {
     "node": ">=0.8.0"
